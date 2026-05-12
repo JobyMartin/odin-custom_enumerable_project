@@ -15,6 +15,7 @@ RSpec.describe Enumerable do
     context 'when any element does not match the condition' do
       it 'returns false' do
         expect(enumerable.my_all? { |value| value < 5 }).to eq false
+        expect([false, true, true].my_all? { |value| value }).to eq false
       end
     end
   end

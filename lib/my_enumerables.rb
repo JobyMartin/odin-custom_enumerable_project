@@ -44,11 +44,10 @@ module Enumerable
   end
 
   def my_all?
-    all = nil
     my_each do |item|
-      yield(item) ? all = true : all = false
+      return false unless yield(item)
     end
-    all
+    true
   end
 
   def my_none?
